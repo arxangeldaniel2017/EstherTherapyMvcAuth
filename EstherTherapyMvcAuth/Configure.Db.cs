@@ -1,3 +1,4 @@
+using EstherTherapyMvcAuth.ServiceModel;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ServiceStack;
@@ -34,6 +35,23 @@ namespace EstherTherapyMvcAuth
                 if (db.CreateTableIfNotExists<MyTable>())
                 {
                     db.Insert(new MyTable { Name = "Seed Data for new MyTable" });
+                }
+
+                if (db.CreateTableIfNotExists<Booking>())
+                {
+                    // Seed data
+                    db.Insert(new Booking
+                    {
+                        Name = "Test",
+                        Cost = 123,
+                        RoomNumber = 321,
+                        RoomType = RoomType.Queen,
+                        Notes = "Testing more",
+                        BookingStartDate = new DateTime(2022, 1, 1),
+                        BookingEndDate = new DateTime(2022, 1, 5),
+                        CreatedBy = "daniel",
+                        ModifiedBy = "daniel",
+                    });
                 }
             });
     }
