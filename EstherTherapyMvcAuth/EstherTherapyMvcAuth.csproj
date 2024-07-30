@@ -13,7 +13,8 @@
 
   <ItemGroup>
     <PackageReference Include="ServiceStack" Version="8.*" />
-    <PackageReference Include="ServiceStack.Server" Version="8.*" />
+    <PackageReference Include="ServiceStack.OrmLite.Sqlite.Data" Version="8.3.0" />
+    <PackageReference Include="ServiceStack.Server" Version="8.3.0" />
     <PackageReference Include="ServiceStack.Mvc" Version="8.*" />
     <PackageReference Include="ServiceStack.OrmLite.Sqlite" Version="8.*" />
 
