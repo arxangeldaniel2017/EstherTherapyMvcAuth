@@ -2,6 +2,7 @@
 using ServiceStack.DataAnnotations;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -17,6 +18,7 @@ namespace EstherTherapyMvcAuth.ServiceModel
     {
         [AutoIncrement]
         public int Id { get; set; }
+        
         public string Name { get; set; } = default!;
         public RoomType RoomType { get; set; }
         public int RoomNumber { get; set; }

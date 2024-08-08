@@ -20,7 +20,7 @@ public class AppHost : AppHostBase, IHostingStartup
         SetConfig(new HostConfig {
                 UseSameSiteCookies = true,
 #if DEBUG                
-                AdminAuthSecret = "adm1nSecret", // Enable Admin Access with ?authsecret=adm1nSecret
+                AdminAuthSecret = "secretoff", // Enable Admin Access with ?authsecret=secretoff
 #endif
         });
     }

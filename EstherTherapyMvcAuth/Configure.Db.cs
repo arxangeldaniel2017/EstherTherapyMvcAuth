@@ -21,7 +21,7 @@ public class ConfigureDb : IHostingStartup
         })
         .ConfigureAppHost(appHost => {
             // Enable built-in Database Admin UI at /admin-ui/database
-            appHost.Plugins.Add(new AdminDatabaseFeature());
+            //appHost.Plugins.Add(new AdminDatabaseFeature());
 
             using var db = appHost.Resolve<IDbConnectionFactory>().Open();
             if (db.CreateTableIfNotExists<Booking>())
