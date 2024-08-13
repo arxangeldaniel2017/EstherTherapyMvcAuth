@@ -106,4 +106,6 @@ esthertherapymvcauth4
 
 --- worked ---
 
+git remote add dokku dokku@159.223.11.118:aspnetapp
+
 echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBlqZY02wymNBbykBKC6VrFkkt2PYfVzEJ0LRXai2zTX arxan@Danilo" | dokku ssh-keys:add ed25519
