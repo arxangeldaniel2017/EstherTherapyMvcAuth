@@ -1,0 +1,109 @@
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCZ9s+SjCfI69eHdrducXVhsHnNRviGJ8lSSus8hdUANLs3W+UZPwJ0nhgGPiS/g8Y3v116fyyzpywNA6uEJ87fELYEiQrI65bbN8wHrKms/v+uWmWtYZL3I+QzE/TtQulQTOTEeHSS1Mdewg8aM5XELIz7lET1DCZKAxA6RKDAZqTphA6qQRJfayfH92+NN2OnHV4BoBdo+zmmlr/KQXY553LWzG92KrswHp8zM/vSdokykSWIeU1M2AHLd++QmqevJpsSDLs8tuik4N7m9kZxKdxnCVwFur61SX6sdu737oAo3zeO7T/hwpn0DDw6G/cWOMogsU9mGqRRyOL8TQNl anatoly@bezeq.local
+
+
+#create dokku app
+dokku apps:create esthertherapymvcauth
+
+
+#navigate to ssh directory
+cd /etc/ssh
+
+#copy ssh key to the ssh directory
+printf "AAAAB3NzaC1yc2EAAAADAQABAAABAQCZ9s+SjCfI69eHdrducXVhsHnNRviGJ8lSSus8hdUANLs3W+UZPwJ0nhgGPiS/g8Y3v116fyyzpywNA6uEJ87fELYEiQrI65bbN8wHrKms/v+uWmWtYZL3I+QzE/TtQulQTOTEeHSS1Mdewg8aM5XELIz7lET1DCZKAxA6RKDAZqTphA6qQRJfayfH92+NN2OnHV4BoBdo+zmmlr/KQXY553LWzG92KrswHp8zM/vSdokykSWIeU1M2AHLd++QmqevJpsSDLs8tuik4N7m9kZxKdxnCVwFur61SX6sdu737oAo3zeO7T/hwpn0DDw6G/cWOMogsU9mGqRRyOL8TQNl" > ssh_dokku_rsa_key.pub
+
+#link ssh key to dokku
+dokku ssh-keys:add dokku_admin /etc/ssh/ssh_dokku_rsa_key.pub
+
+
+---
+git remote add esthertherapymvcauth dokku@178.62.223.219:esthertherapymvcauth
+
+git push esthertherapymvcauth master
+
+
+root@164.92.159.140
+natasha78Koroleva
+
+putty.exe -ssh root@164.92.159.140 -pw natasha78Koroleva
+
+dokku apps:create esthertherapymvcauth2
+git remote add esthertherapymvcauth2 root@164.92.159.140:esthertherapymvcauth2
+
+git commit -m "initial commit"
+git push esthertherapymvcauth2 master
+
+---
+
+git clone https://github.com/arxangeldaniel2017/EstherTherapyMvcAuth
+cd EstherTherapyMvcAuth
+
+git remote add esthertherapymvcauth2 root@164.92.159.140:esthertherapymvcauth2
+git push esthertherapymvcauth2 master
+
+git remote add dokku dokku@178.62.208.150:esthertherapymvcauth3
+git push dokku master
+
+git remote add esthertherapymvcauth3 root@178.62.208.150:esthertherapymvcauth3
+git push esthertherapymvcauth3 master
+
+
+--- add user to dokku ---
+
+#navigate to ssh directory
+cd /etc/ssh
+
+#copy ssh key to the ssh directory
+printf "YOUR_PUBLIC_KEY" > ssh_dokku_rsa_key.pub
+
+#link ssh key to dokku
+dokku ssh-keys:add dokku_admin /etc/ssh/ssh_dokku_rsa_key.pub
+
+#remove default nginx page
+rm /etc/nginx/sites-enabled/default
+
+---
+
+/home/dokku/.ssh/authorized_keys
+
+---
+
+#initalise git for the directory
+git init
+
+#add remote link to your github repository
+git remote add origin LINK_TO_YOUR_GITHUB_REPOSITORY
+
+#add the files ready for a commit
+git add .
+
+#add commit message for your first push to the repository
+git commit -m "Add your commit message here"
+
+#push changes to git repository
+git push origin master
+
+---
+git init
+git remote add origin git@github.com:arxangeldaniel2017/EstherTherapyMvcAuth.git
+
+-- git@github.com:arxangeldaniel2017/EstherTherapyMvcAuth.git
+
+
+---
+
+git remote add dokku9 dokku@178.62.208.150:demodeployment
+git push dokku9 master
+
+
+---
+
+esthertherapymvcauth3
+178.62.208.150
+
+esthertherapymvcauth4
+159.223.11.118
+
+
+--- worked ---
+
+echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBlqZY02wymNBbykBKC6VrFkkt2PYfVzEJ0LRXai2zTX arxan@Danilo" | dokku ssh-keys:add ed25519
