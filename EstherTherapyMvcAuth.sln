@@ -8,6 +8,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EstherTherapyMvcAuth.Servic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EstherTherapyMvcAuth.ServiceModel", "EstherTherapyMvcAuth.ServiceModel\EstherTherapyMvcAuth.ServiceModel.csproj", "{0127B6CA-1B79-46A6-8307-B36836D107F0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1FDA1070-DE36-49C7-97E2-899C879EA372}"
+	ProjectSection(SolutionItems) = preProject
+		Dockerfile = Dockerfile
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
