@@ -12,14 +12,14 @@ WORKDIR /src
 COPY ["EstherTherapyMvcAuth/EstherTherapyMvcAuth.csproj", "EstherTherapyMvcAuth/"]
 COPY ["EstherTherapyMvcAuth.ServiceInterface/EstherTherapyMvcAuth.ServiceInterface.csproj", "EstherTherapyMvcAuth.ServiceInterface/"]
 COPY ["EstherTherapyMvcAuth.ServiceModel/EstherTherapyMvcAuth.ServiceModel.csproj", "EstherTherapyMvcAuth.ServiceModel/"]
-RUN dotnet restore "./EstherTherapyMvcAuth/./EstherTherapyMvcAuth.csproj"
+RUN dotnet restore "./EstherTherapyMvcAuth/./EstherTherapyMvcAuth.csproj" -a amd64
 COPY . .
 WORKDIR "/src/EstherTherapyMvcAuth"
-RUN dotnet build "./EstherTherapyMvcAuth.csproj" -c $BUILD_CONFIGURATION -o /app/build
+RUN dotnet build "./EstherTherapyMvcAuth.csproj" -c $BUILD_CONFIGURATION -a amd64 -o /app/build
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./EstherTherapyMvcAuth.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "./EstherTherapyMvcAuth.csproj" -c $BUILD_CONFIGURATION -a amd64 -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
