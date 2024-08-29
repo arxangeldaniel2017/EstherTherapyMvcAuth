@@ -50,4 +50,7 @@ app.UseMvc(routes =>
         template: "{controller=Home}/{action=Index}/{id?}");
 });
 
+// added //
+app.UseRouting();
+
 app.Run();
