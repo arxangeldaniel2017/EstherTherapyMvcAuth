@@ -10,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 //builder.Services.AddControllersWithViews(options => options.EnableEndpointRouting = true).AddRazorRuntimeCompilation();
 
 #if DEBUG
-builder.Services.AddMvc(options => options.EnableEndpointRouting = false).AddRazorRuntimeCompilation();
+    builder.Services.AddMvc(options => options.EnableEndpointRouting = false).AddRazorRuntimeCompilation();
 #else
     builder.Services.AddMvc(options => options.EnableEndpointRouting = false);
 #endif
