@@ -12,19 +12,23 @@ WORKDIR /src
 COPY ["EstherTherapyMvcAuth/EstherTherapyMvcAuth.csproj", "EstherTherapyMvcAuth/"]
 COPY ["EstherTherapyMvcAuth.ServiceInterface/EstherTherapyMvcAuth.ServiceInterface.csproj", "EstherTherapyMvcAuth.ServiceInterface/"]
 COPY ["EstherTherapyMvcAuth.ServiceModel/EstherTherapyMvcAuth.ServiceModel.csproj", "EstherTherapyMvcAuth.ServiceModel/"]
-RUN dotnet restore "./EstherTherapyMvcAuth/./EstherTherapyMvcAuth.csproj" 
+RUN dotnet restore -a amd64 "./EstherTherapyMvcAuth/./EstherTherapyMvcAuth.csproj" 
 COPY . .
 WORKDIR "/src/EstherTherapyMvcAuth"
-RUN dotnet build "./EstherTherapyMvcAuth.csproj" -c $BUILD_CONFIGURATION  -o /app/build
+RUN dotnet build -a amd64 "./EstherTherapyMvcAuth.csproj" -c $BUILD_CONFIGURATION  -o /app/build
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./EstherTherapyMvcAuth.csproj" -c $BUILD_CONFIGURATION  -o /app/publish /p:UseAppHost=false
+RUN dotnet publish -a amd64 "./EstherTherapyMvcAuth.csproj" -c $BUILD_CONFIGURATION  -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "EstherTherapyMvcAuth.dll"]
+#ENTRYPOINT ["dotnet", "EstherTherapyMvcAuth.dll"]
+ENTRYPOINT ["./EstherTherapyMvcAuth"]
+
+
+# --- #
 
 
 ## Learn about building .NET container images:
