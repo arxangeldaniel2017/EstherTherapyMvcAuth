@@ -61,4 +61,13 @@ app.UseMvc(routes =>
 // added //
 //app.UseRouting();
 
+// added //
+app.UseRouting().UseEndpoints(endpoints =>
+{
+    endpoints.MapRazorPages();
+    endpoints.MapDefaultControllerRoute();
+});
+
+
+
 app.Run();
