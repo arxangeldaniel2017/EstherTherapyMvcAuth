@@ -6,11 +6,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 //builder.Services.AddMvc(options => options.EnableEndpointRouting = false).AddRazorRuntimeCompilation();
 
+// added //
+//builder.Services.AddControllersWithViews(options => options.EnableEndpointRouting = true).AddRazorRuntimeCompilation();
 
 #if DEBUG
 builder.Services.AddMvc(options => options.EnableEndpointRouting = false).AddRazorRuntimeCompilation();
 #else
-builder.Services.AddMvc(options => options.EnableEndpointRouting = false);
+    builder.Services.AddMvc(options => options.EnableEndpointRouting = false);
 #endif
 
 builder.Services.Configure<CookiePolicyOptions>(options => {
@@ -43,6 +45,7 @@ app.UseAuthentication();
 // Configure ASP.NET Core App
 app.UseServiceStack(new AppHost());
 
+// removed //
 app.UseMvc(routes =>
 {
     routes.MapRoute(
@@ -51,6 +54,6 @@ app.UseMvc(routes =>
 });
 
 // added //
-app.UseRouting();
+//app.UseRouting();
 
 app.Run();
