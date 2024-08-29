@@ -1,6 +1,7 @@
 ﻿using ServiceStack;
 
 using Microsoft.AspNetCore.Authentication.Cookies;
+using ServiceStack.Script;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,10 @@ var builder = WebApplication.CreateBuilder(args);
 #else
     builder.Services.AddMvc(options => options.EnableEndpointRouting = false);
 #endif
+
+
+// added //
+builder.Services.AddRazorPages();
 
 builder.Services.Configure<CookiePolicyOptions>(options => {
     // This lambda determines whether user consent for non-essential cookies is needed for a given request.
