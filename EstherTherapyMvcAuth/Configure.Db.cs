@@ -16,7 +16,7 @@ public class ConfigureDb : IHostingStartup
             
             builder.ConfigureServices((context, services) => {
                 services.AddSingleton<IDbConnectionFactory>(new OrmLiteConnectionFactory(
-                    Environment.GetEnvironmentVariable("DATABASE_URL"), MySqlDialect.Provider));
+                    Environment.GetEnvironmentVariable("DATABASE_URL"), MySql55Dialect.Provider));
             }
         //builder.ConfigureServices((context, services) => {
         //    services.AddSingleton<IDbConnectionFactory>(new OrmLiteConnectionFactory(
