@@ -16,7 +16,9 @@ public class ConfigureDb : IHostingStartup
 
         .ConfigureServices((context, services) => {
             services.AddSingleton<IDbConnectionFactory>(new OrmLiteConnectionFactory(
-                Environment.GetEnvironmentVariable("DATABASE_CONNECTION"), MySqlDialect.Provider));
+                Environment.GetEnvironmentVariable("DATABASE_CONNECTION")
+                ?? context.Configuration.GetConnectionString("DefaultConnection"), 
+                MySqlDialect.Provider));
         })
         .ConfigureAppHost(appHost => {
             // Enable built-in Database Admin UI at /admin-ui/database
