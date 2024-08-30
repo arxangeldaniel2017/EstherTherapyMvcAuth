@@ -1,14 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-  <PublishProfile>DefaultContainer</PublishProfile>
+  <!-- <PublishProfile>DefaultContainer</PublishProfile> -->
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <!-- <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel> -->
     <UserSecretsId>48a4a134-5d09-48af-8aa1-5fb468467c2d</UserSecretsId>
-    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <!-- <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS> -->
+    <!-- <PlatformTarget>AnyCPU</PlatformTarget> -->
   </PropertyGroup>
   <ItemGroup>
     <Using Include="EstherTherapyMvcAuth" />
