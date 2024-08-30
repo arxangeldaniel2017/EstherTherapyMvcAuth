@@ -7,6 +7,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <!-- <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel> -->
     <UserSecretsId>48a4a134-5d09-48af-8aa1-5fb468467c2d</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <!-- <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS> -->
     <!-- <PlatformTarget>AnyCPU</PlatformTarget> -->
   </PropertyGroup>
@@ -21,10 +22,8 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.4" />
     <PackageReference Include="ServiceStack" Version="8.*" />
     <PackageReference Include="ServiceStack.OrmLite.MySql" Version="8.3.0" />
-    <PackageReference Include="ServiceStack.OrmLite.Sqlite.Data" Version="8.3.0" />
     <PackageReference Include="ServiceStack.Server" Version="8.3.0" />
     <PackageReference Include="ServiceStack.Mvc" Version="8.*" />
-    <PackageReference Include="ServiceStack.OrmLite.Sqlite" Version="8.*" />
 
     <!-- Required for Razor compilation on change: https://docs.microsoft.com/en-us/aspnet/core/mvc/views/view-compilation?view=aspnetcore-5.0 -->
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="8.0.7" Condition="'$(Configuration)' == 'Debug'" />
