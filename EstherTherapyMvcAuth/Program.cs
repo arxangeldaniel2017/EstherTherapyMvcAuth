@@ -5,11 +5,6 @@ using ServiceStack.Script;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//builder.Services.AddMvc(options => options.EnableEndpointRouting = false).AddRazorRuntimeCompilation();
-
-// added //
-//builder.Services.AddControllersWithViews(options => options.EnableEndpointRouting = true).AddRazorRuntimeCompilation();
-
 #if DEBUG
     builder.Services.AddMvc(options => options.EnableEndpointRouting = false).AddRazorRuntimeCompilation();
 #else
@@ -57,9 +52,6 @@ app.UseMvc(routes =>
         name: "default",
         template: "{controller=Home}/{action=Index}/{id?}");
 });
-
-// added //
-//app.UseRouting();
 
 // added //
 app.UseRouting().UseEndpoints(endpoints =>
