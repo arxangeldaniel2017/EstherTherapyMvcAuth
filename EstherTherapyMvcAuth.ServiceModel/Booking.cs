@@ -67,7 +67,7 @@ namespace EstherTherapyMvcAuth.ServiceModel
     [LocodeCss(Field = "col-span-12 sm:col-span-6", Fieldset = "grid grid-cols-8 gap-2", Form = "border overflow-hidden max-w-screen-lg")]
     [ExplorerCss(Field = "col-span-12 sm:col-span-6", Fieldset = "grid grid-cols-6 gap-8", Form = "border border-indigo-500 overflow-hidden max-w-screen-lg")]
     [Route("/bookings", "POST")]
-    //[ValidateHasRole(Roles.Employee)]
+    [ValidateHasRole(Roles.Employee)]
     [AutoApply(Behavior.AuditCreate)]
     public class CreateBooking : ICreateDb<Booking>, IReturn<IdResponse>
     {
@@ -89,7 +89,7 @@ namespace EstherTherapyMvcAuth.ServiceModel
     [Tag("bookings"), Description("Update an existing Booking")]
     [Notes("Find out how to quickly create a <a class='svg-external' target='_blank' href='https://youtu.be/nhc4MZufkcM'>C# Bookings App from Scratch</a>")]
     [Route("/booking/{Id}", "PATCH")]
-    //[ValidateHasRole(Roles.Employee)]
+    [ValidateHasRole(Roles.Employee)]
     [AutoApply(Behavior.AuditModify)]
     public class UpdateBooking : IPatchDb<Booking>, IReturn<IdResponse>
     {
@@ -110,7 +110,7 @@ namespace EstherTherapyMvcAuth.ServiceModel
 
     [Tag("bookings"), Description("Delete a Booking")]
     [Route("/booking/{Id}", "DELETE")]
-    //[ValidateHasRole(Roles.Manager)]
+    [ValidateHasRole(Roles.Manager)]
     [AutoApply(Behavior.AuditSoftDelete)]
     public class DeleteBooking : IDeleteDb<Booking>, IReturnVoid
     {
