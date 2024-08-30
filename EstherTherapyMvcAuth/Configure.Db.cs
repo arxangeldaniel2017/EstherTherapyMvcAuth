@@ -12,13 +12,19 @@ namespace EstherTherapyMvcAuth;
 
 public class ConfigureDb : IHostingStartup
 {
-    public void Configure(IWebHostBuilder builder) => builder
-        .ConfigureServices((context, services) => {
-            services.AddSingleton<IDbConnectionFactory>(new OrmLiteConnectionFactory(
-                context.Configuration.GetConnectionString("DefaultConnection")
-                ?? ":memory:",
-                SqliteDialect.Provider));
-        })
+    public void Configure(IWebHostBuilder builder) =>
+            
+            builder.ConfigureServices((context, services) => {
+                services.AddSingleton<IDbConnectionFactory>(new OrmLiteConnectionFactory(
+                    Environment.GetEnvironmentVariable("DATABASE_URL"), MySqlDialect.Provider));
+            }
+        //builder.ConfigureServices((context, services) => {
+        //    services.AddSingleton<IDbConnectionFactory>(new OrmLiteConnectionFactory(
+        //        context.Configuration.GetConnectionString("DefaultConnection")
+        //        ?? ":memory:",
+        //        SqliteDialect.Provider));
+        //}
+        )
         .ConfigureAppHost(appHost => {
             // Enable built-in Database Admin UI at /admin-ui/database
             //appHost.Plugins.Add(new AdminDatabaseFeature());
