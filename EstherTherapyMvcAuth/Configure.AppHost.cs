@@ -1,6 +1,6 @@
 using Funq;
 using ServiceStack;
-using EstherTherapyMvcAuth.ServiceInterface;
+using EstherTherapyMvcAuth.MyServiceInterface;
 
 [assembly: HostingStartup(typeof(EstherTherapyMvcAuth.AppHost))]
 

@@ -30,11 +30,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EstherTherapyMvcAuth.ServiceInterface\EstherTherapyMvcAuth.ServiceInterface.csproj" />
-    <ProjectReference Include="..\EstherTherapyMvcAuth.ServiceModel\EstherTherapyMvcAuth.ServiceModel.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

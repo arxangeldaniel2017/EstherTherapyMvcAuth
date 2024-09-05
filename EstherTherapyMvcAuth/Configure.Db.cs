@@ -1,4 +1,4 @@
-using EstherTherapyMvcAuth.ServiceModel;
+using EstherTherapyMvcAuth.MyServiceModel;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ServiceStack;
@@ -36,9 +36,9 @@ public class ConfigureDb : IHostingStartup
                     Notes = "Testing more",
                     BookingStartDate = new DateTime(2022, 1, 1),
                     BookingEndDate = new DateTime(2022, 1, 5),
-                    CreatedBy = "daniel",
+                    //CreatedBy = "daniel",
                     //CreatedDate = DateTime.Now,
-                    ModifiedBy = "daniel",
+                    //ModifiedBy = "daniel",
                 });
             }
         });
