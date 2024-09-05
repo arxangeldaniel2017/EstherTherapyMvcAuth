@@ -10,8 +10,8 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["EstherTherapyMvcAuth/EstherTherapyMvcAuth.csproj", "EstherTherapyMvcAuth/"]
-COPY ["EstherTherapyMvcAuth.ServiceInterface/EstherTherapyMvcAuth.ServiceInterface.csproj", "EstherTherapyMvcAuth.ServiceInterface/"]
-COPY ["EstherTherapyMvcAuth.ServiceModel/EstherTherapyMvcAuth.ServiceModel.csproj", "EstherTherapyMvcAuth.ServiceModel/"]
+#COPY ["EstherTherapyMvcAuth.ServiceInterface/EstherTherapyMvcAuth.ServiceInterface.csproj", "EstherTherapyMvcAuth.ServiceInterface/"]
+#COPY ["EstherTherapyMvcAuth.ServiceModel/EstherTherapyMvcAuth.ServiceModel.csproj", "EstherTherapyMvcAuth.ServiceModel/"]
 RUN dotnet restore "./EstherTherapyMvcAuth/./EstherTherapyMvcAuth.csproj" -a amd64
 COPY . .
 WORKDIR "/src/EstherTherapyMvcAuth"
