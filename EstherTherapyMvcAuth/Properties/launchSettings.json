@@ -7,7 +7,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "EstherTherapyMvcAuth": {
+    "EstherTherapyMvcAuth": { 
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {
